@@ -84,7 +84,7 @@ router.post('/edit/:id', function(req, res){
 		password: req.body.password,
 		role: req.body.role,
 		contactnumber: req.body.contactnumber,
-		name: req.body.name
+		name: req.body.name,
 		
 		id: req.params.id
 	};
