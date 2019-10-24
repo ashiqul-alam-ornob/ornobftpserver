@@ -29,6 +29,7 @@ router.get('/adduser', function(req, res){
 router.post('/adduser', function(req, res){
 
 	var user = {
+		
 		username: req.body.username,
 		password: req.body.password,
 		role: req.body.role,
@@ -53,6 +54,7 @@ router.get('/addmoderator', function(req, res){
 router.post('/addmoderator', function(req, res){
 
 	var user = {
+		
 		username: req.body.username,
 		password: req.body.password,
 		role: req.body.role,
@@ -69,24 +71,25 @@ router.post('/addmoderator', function(req, res){
 	});
 });
 
-router.get('/edit/:id', function(req, res){
+router.get('/edit/:userid', function(req, res){
 
-	userModel.getById(req.params.id, function(results){
+	userModel.getById(req.params.userid, function(results){
 		res.render('user/edit', {user: results[0]});		
 	});
 
 });
 
-router.post('/edit/:id', function(req, res){
+router.post('/edit/:userid', function(req, res){
 	
 	var user = {
+		
 		username: req.body.username,
 		password: req.body.password,
 		role: req.body.role,
 		contactnumber: req.body.contactnumber,
 		name: req.body.name,
 		
-		id: req.params.id
+		userid: req.params.userid
 	};
 
 	userModel.update(user, function(status){
@@ -99,9 +102,9 @@ router.post('/edit/:id', function(req, res){
 	});
 });
 
-router.get('/details/:id', function(req, res){
+router.get('/details/:userid', function(req, res){
 
-	userModel.getById(req.params.id, function(result){
+	userModel.getById(req.params.userid, function(result){
 		console.log(result);
 		res.render('user/details', {user: result});
 	});

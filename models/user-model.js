@@ -53,8 +53,8 @@ module.exports={
 		
 	},
 	delete : function(user, callback){
-		//var sql = "insert into user values('','"+ user.username+"', '"+user.password+"')";
-		db.execute(sql, [],  function(status){
+		var sql = "delete from user where userid=?"
+		db.execute(sql, [user.id],  function(status){
 			callback(status);
 		});
 	}
