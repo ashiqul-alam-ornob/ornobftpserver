@@ -46,8 +46,8 @@ module.exports={
 		});
 	},
 	update : function(user, callback){
-		var sql = "update user set username=?, userpassword=?, contactnumber=?, name=? where id=?";		
-			db.execute(sql, [user.username, user.password, user.contactnumber, user.name, user.id], function(status){
+		var sql = "update user set username=?, userpassword=?, contactnumber=?, name=? where userid=?";		
+			db.execute(sql, [user.username, user.password, user.contactnumber, user.name, user.userid], function(status){
 				callback(status);
 			});
 		
