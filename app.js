@@ -8,6 +8,8 @@ var home  		= require('./controllers/home');
 var user  		= require('./controllers/user');
 var login  		= require('./controllers/login');
 var logout  	= require('./controllers/logout');
+var media  	= require('./controllers/media');
+
 var app 		= express();
 
 //CONGIFURATION
