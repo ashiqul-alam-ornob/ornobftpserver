@@ -2,10 +2,10 @@ var db = require('./db');
 
 module.exports={
 
-	getById: function(id, callback){
+	getById: function(userid, callback){
 
-		var sql = "select * from user where id=?";
-		db.getResults(sql, [id], function(result){
+		var sql = "select * from user where userid=?";
+		db.getResults(sql, [userid], function(result){
 
 			//console.log(result);
 			if(result.length > 0 ){
@@ -54,7 +54,7 @@ module.exports={
 	},
 	delete : function(user, callback){
 		var sql = "delete from user where userid=?"
-		db.execute(sql, [user.id],  function(status){
+		db.execute(sql, [user.userid],  function(status){
 			callback(status);
 		});
 	}
