@@ -82,7 +82,7 @@ router.get('/edit/:userid', function(req, res){
 router.post('/edit/:userid', function(req, res){
 	
 	var user = {
-		
+		userid: req.body.userid,
 		username: req.body.username,
 		password: req.body.password,
 		role: req.body.role,
