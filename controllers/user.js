@@ -22,6 +22,29 @@ router.get('/userlist', function(req, res){
 		});
 });
 
+router.get('/adduser', function(req, res){
+	res.render('user/adduser');
+});
+
+router.post('/adduser', function(req, res){
+
+	var user = {
+		username: req.body.username,
+		password: req.body.password,
+		role: req.body.role,
+		contactnumber: req.body.contactnumber,
+		name: req.body.name
+	};
+	
+		userModel.insert(user, function(status){
+		if(status){
+			res.redirect('/user/userlist');
+		}else{
+			res.redirect('/user/adduser');
+		}
+	});
+});
+
 
 router.get('/addmoderator', function(req, res){
 	res.render('user/addmoderator');
