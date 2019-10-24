@@ -23,6 +23,7 @@ app.use('/home', home);
 app.use('/user', user);
 app.use('/login', login);
 app.use('/logout', logout);
+app.use('/media', media);
 
 //ROUTING
 app.get('/', function(req, res){
